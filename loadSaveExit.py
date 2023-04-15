@@ -81,4 +81,9 @@ def save():
         print("")
         print(f"Berhasil menyimpan data di folder FileLoad/{saveFolder}!")
 
-    
+def exit():
+    inputUser = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
+    while (inputUser != 'n' and inputUser != 'y'):
+        inputUser = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
+    if inputUser == 'y':
+        save()
