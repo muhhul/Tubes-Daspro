@@ -62,3 +62,23 @@ def candi():
 def bahan():
     return listBahan
 
+def save():
+    saveFolder = input("Masukkan nama folder: ")
+    cekLoad = function.mencari(arrFolder,saveFolder)
+    if cekLoad==True:
+        print("")
+        print("Saving...")
+        time.sleep(1.5)
+        print("")
+        print(f"Berhasil menyimpan data di folder FileLoad/{saveFolder}!")
+    else:
+        print("")
+        print("Saving...")
+        time.sleep(1.5)
+        print("")
+        print(f"Memuat folder FileLoad/{saveFolder}...")
+        time.sleep(1.5)
+        print("")
+        print(f"Berhasil menyimpan data di folder FileLoad/{saveFolder}!")
+
+    
