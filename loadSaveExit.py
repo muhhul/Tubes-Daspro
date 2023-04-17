@@ -3,6 +3,7 @@ import sys
 import os
 import function
 import time
+import shutil
 
 path = r"D:\Hul\ITB\Akademik\Daspro\Tubes\FileLoad" #program akan error
 # ganti alamat folder sesuai folder kamu
@@ -63,15 +64,21 @@ def bahan():
     return listBahan
 
 def save():
+    os.chdir(r"D:\Hul\ITB\Akademik\Daspro\Tubes")
+    arrFolder=os.listdir()
+    cekFolder2 = function.mencari(arrFolder,'FileLoad')
+    os.chdir(path)
+    arrFolder=os.listdir()
     saveFolder = input("Masukkan nama folder: ")
-    cekLoad = function.mencari(arrFolder,saveFolder)
-    if cekLoad==True:
+    cekFolder1 = function.mencari(arrFolder,saveFolder)
+    if cekFolder1==True and cekFolder2==True:
         print("")
         print("Saving...")
         time.sleep(1.5)
         print("")
         print(f"Berhasil menyimpan data di folder FileLoad/{saveFolder}!")
-    else:
+    elif cekFolder2==True:
+        shutil.copytree('TemplateLoad',f'{saveFolder}')
         print("")
         print("Saving...")
         time.sleep(1.5)
@@ -80,6 +87,9 @@ def save():
         time.sleep(1.5)
         print("")
         print(f"Berhasil menyimpan data di folder FileLoad/{saveFolder}!")
+    else:
+        print("")
+        print("Saving...")
 
 def exit():
     inputUser = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")

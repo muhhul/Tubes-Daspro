@@ -5,3 +5,4 @@ listUser = importFull.loadSaveExit.user()
 listCandi = importFull.loadSaveExit.candi()
 listBahan = importFull.loadSaveExit.bahan()
 
+importFull.loadSaveExit.save()
