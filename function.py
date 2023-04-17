@@ -13,7 +13,6 @@ def mencari(arr,nameFile): #untuk meecari apakah ada suatu nilai dalam sebuah li
     return cek
 def newSplit(arr,x): #pengganti fungsi split
     arrTemp=[[0 for i in range(x)] for j in range(newLen(arr))]
-    arrTemp2=['0' for i in range(newLen(arr)-1)]
     for i in range(newLen(arr)):
         kata=''
         count=0

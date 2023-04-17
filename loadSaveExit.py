@@ -63,8 +63,24 @@ def candi():
 def bahan():
     return listBahan
 
+fileUser.close()
+fileCandi.close()
+fileBahan.close()
+
+def write(list,arrFile,x):
+    file= open(f"{arrFile}","w")
+    for i in range(function.newLen(list)):
+        for j in range(x):
+            if j == x-1:
+                file.write(list[i][j])
+                file.write("\n")
+            else:
+                file.write(list[i][j])
+                file.write(";")
+    file.close()
+
 def save():
-    os.chdir(r"D:\Hul\ITB\Akademik\Daspro\Tubes")
+    os.chdir(r"D:\Hul\ITB\Akademik\Daspro\Tubes") #ganti sesuai dengan penyipanan directory kamu
     arrFolder=os.listdir()
     cekFolder2 = function.mencari(arrFolder,'FileLoad')
     os.chdir(path)
@@ -72,6 +88,13 @@ def save():
     saveFolder = input("Masukkan nama folder: ")
     cekFolder1 = function.mencari(arrFolder,saveFolder)
     if cekFolder1==True and cekFolder2==True:
+        newPath = f"{path}\{saveFolder}"
+        os.chdir(newPath)
+        arrFile = os.listdir()
+        write(listUser,arrFile[2],3)
+        write(listCandi,arrFile[1],5)
+        write(listBahan,arrFile[0],3)
+
         print("")
         print("Saving...")
         time.sleep(1.5)
@@ -79,6 +102,13 @@ def save():
         print(f"Berhasil menyimpan data di folder FileLoad/{saveFolder}!")
     elif cekFolder2==True:
         shutil.copytree('TemplateLoad',f'{saveFolder}')
+        newPath = f"{path}\{saveFolder}"
+        os.chdir(newPath)
+        arrFile = os.listdir()
+        write(listUser,arrFile[2],3)
+        write(listCandi,arrFile[1],5)
+        write(listBahan,arrFile[0],3)
+
         print("")
         print("Saving...")
         time.sleep(1.5)
@@ -88,6 +118,17 @@ def save():
         print("")
         print(f"Berhasil menyimpan data di folder FileLoad/{saveFolder}!")
     else:
+        os.chdir(r"D:\Hul\ITB\Akademik\Daspro\Tubes") #ganti sesuai dengan penyipanan directory kamu
+        os.makedirs('/FileLoad')
+        os.chdir(path)
+        shutil.copytree('TemplateLoad',f'{saveFolder}')
+        newPath = f"{path}\{saveFolder}"
+        os.chdir(newPath)
+        arrFile = os.listdir()
+        write(listUser,arrFile[2],3)
+        write(listCandi,arrFile[1],5)
+        write(listBahan,arrFile[0],3)
+
         print("")
         print("Saving...")
 
