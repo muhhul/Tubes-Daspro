@@ -5,4 +5,5 @@ listUser = importFull.loadSaveExit.user()
 listCandi = importFull.loadSaveExit.candi()
 listBahan = importFull.loadSaveExit.bahan()
 
+importFull.ubahPassword.ubahPass("Bondowoso","akuMenang",listUser)
 importFull.loadSaveExit.save()
