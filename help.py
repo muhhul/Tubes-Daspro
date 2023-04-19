@@ -1,5 +1,5 @@
 def help (user):
-    if user not found : #belum login
+    if user=='' : #belum login
         print("================ HELP ================", end="\n")
         print("1. login \n   Untuk masuk menggunakan akun")
         print ("2. exit \n   Untuk keluar dari program dan kembali ke terminal")
