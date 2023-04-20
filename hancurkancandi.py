@@ -8,7 +8,6 @@ def hancurkancandi (listCandi):
         if choice == 'Y':
             print("Candi telah berhasil dihancurkan")
             listCandi[i][0]='0'
-            candi_terhapus = i
         else:
             print("Candi batal dihancurkan")
         break
