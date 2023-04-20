@@ -2,10 +2,10 @@ import function
 import time
 
 def AyamBerkokok (listCandi):
-    jumlah_candi = function.newLen(listCandi)
+    jumlah_candi = 0
     for i in range (1, function.newLen(listCandi)):
         if listCandi[i][0] == '0': #mengecek banyak candi yang dihancurkan roro atau hilang bersama dengan jin pembangunnya
-            jumlah_candi -= 1
+            jumlah_candi += 1
 
     print (f"Jumlah Candi: {jumlah_candi}")
     if jumlah_candi >= 100:
