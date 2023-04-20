@@ -71,7 +71,7 @@ def write(list,arrFile,x):
     file= open(f"{arrFile}","w")
     for i in range(function.newLen(list)):
         for j in range(x):
-            if listUser[i][0]!='0':
+            if list[i][0]!='0':
                 if j == x-1:
                     file.write(list[i][j])
                     file.write("\n")
@@ -139,3 +139,8 @@ def exit():
         inputUser = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
     if inputUser == 'y':
         save()
+        sys.exit()
+    elif inputUser == 'N':
+        sys.exit()
+    else:
+        exit()

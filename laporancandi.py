@@ -1,8 +1,8 @@
 import function
 import time
 
-def laporancandi(listCandi):
-    if user == 'bandung bondowoso': #user merupakan bandung bondowoso
+def laporancandi(listCandi,user):
+    if user == 'bandung_bondowoso': #user merupakan bandung bondowoso
         print ("Mengambil laporan candimu...")
         time.sleep(1.5)
         #total candi

@@ -4,3 +4,7 @@ import ubahPassword
 import ubahtipejin
 import help
 import hapusjin
+import hancurkancandi
+import ayamberkokok
+import laporancandi
+import laporanjin
