@@ -1,45 +1,34 @@
 from typing import List
+import function
 
 # logged_user = [USERNAME, PASSWORD, ROLE]
 # Jika tidak login -> logged_user = ["", "", ""]
 
 
-def login(logged_user: List[str]) -> List[str]:
+def login(logged_user: List[str],listUser) -> List[str]:
     # 1. Check login, jika sudah login, gagal
-    if logged_user[0] != "":
+    if logged_user != '':
         print("Anda masih login")
-        return ["", "", ""]
     # 2. Belum login?, input username dan password
-    input_username = input("Username: ")
-    input_password = input("Password: ")
-    # 3. Bandingkan dengan CSV
-    with open("./FileLoad/Load1/user.csv") as f:
-        rows = f.read().splitlines()
-        # Loop CSV
-        for i in range(rows):
-            row = rows[i]
-            # TODO: Aldi: NewSplit bermasalah, sampai dibenarkan, akan memakai split
-            [ctx_username, ctx_password, ctx_role] = row.split(";")
-
+    else:
+        input_username = input("Username: ")
+        input_password = input("Password: ")
+        # 3. Bandingkan dengan CSV
+        for i in range(function.newLen(listUser)):
             # Skip CSV header
-            if i == 0:
-                continue
-            # - Jika username salah, print username tidak terdaftar
-            if ctx_username != input_username:
-                continue
+            if listUser[i][0] == input_username:
             # - Jika password salah, print password salah
-            if ctx_password != input_password:
-                print("Password salah")
-                return ["", "", ""]
-
-            # - Jika benar, print Selamat datang
-            print("Selamat datang")
-            print("")
-            return [ctx_username, ctx_password, ctx_role]
-    # Tangkap break dari for loop
-    print("Username tidak terdaftar")
-    return ["", "", ""]
-
+                if listUser[i][1] != input_password:
+                    print("Password salah")
+                else:
+                    # - Jika benar, print Selamat datang
+                    print("Selamat datang")
+                    print("")
+                    return [listUser[i][0], listUser[i][2]]
+            # - Jika username salah, print username tidak terdaftar
+            elif i+1==function.newLen(listUser):
+                # Tangkap break dari for loop
+                print("Username tidak terdaftar")
 
 # if __name__ == "__main__":
 #     logged_user = ["", "", ""]
@@ -47,13 +36,13 @@ def login(logged_user: List[str]) -> List[str]:
 
 # logout
 
-
 def logout(logged_user: List[str]):
     # mengecek masih login atau blm
-    if logged_user[0] == "":
+    if logged_user == '':
         # jika blm print(blm login)
         print("logout gagal")
         print("anda belum login")
-        return
     # jika sudah print(logout)
-    print("logout")
+    else:
+        print("logout")
+        return ['','']

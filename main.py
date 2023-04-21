@@ -22,11 +22,9 @@ while(game):
     if inputUser=='help':
         importFull.help.help(user[1])
     elif inputUser=='login':
-        #user=login(user[1])
-        a=1
+        user=importFull.login.login(user[0],listUser)
     elif inputUser=='logout':
-        #user=logout(user[1])
-        a=1
+        user=importFull.login.logout(user[0])
     elif inputUser=='exit':
         importFull.loadSaveExit.exit()
     elif inputUser=='save':
