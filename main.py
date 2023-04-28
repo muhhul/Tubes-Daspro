@@ -30,24 +30,19 @@ while(game):
     elif inputUser=='save':
         importFull.loadSaveExit.save()
     elif inputUser=='summonjin':
-        #summonjin(user[1])
-        a=1
+        importFull.summonjin.summonjin(user[1],listUser,listJin)
     elif inputUser=='hapusjin':
         importFull.hapusjin.hapusjin(listUser,listCandi,user[1])
     elif inputUser=='ubahjin':
         importFull.ubahtipejin.UbahTipeJin(listUser,user[1])
     elif inputUser=='bangun':
-        #pembangun(user[1])
-        a=1
+        importFull.bangun.bangun(listBahan,listCandi,user,listJin)
     elif inputUser=='kumpul':
-        #pengumpul(user[1])
-        a=1
+        importFull.kumpul.kumpul(user[1],listBahan)
     elif inputUser=='batchkumpul':
-        #batchkumpul(user[1])
-        a=1
+        importFull.batch_kumpul.batchkumpul(user[1],listUser,listBahan)
     elif inputUser=='batchbangun':
-        #batchbangun(user[1])
-        a=1
+        importFull.batch_bangun.batchbangun(user[1],listUser,listCandi,listBahan,listJin)
     elif inputUser=='laporanjin':
         importFull.laporanjin.laporanjin(listUser,listBahan,listJin,user[1])
     elif inputUser=='laporancandi':

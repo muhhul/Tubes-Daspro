@@ -16,20 +16,21 @@ def laporanjin(listUser,listBahan,listJin,user):
                 totalJinPembangun += 1
             totalJin = totalJinPengumpul + totalJinPembangun
         for i in range(1,function.newLen(listJin)):
-            if listJin[i][1]<=candiTermalas:
-                if listJin[i][1]==candiTermalas:
-                    if listJin[i][0]>jinTermalas:
+            if listJin[i][0]!='0':
+                if listJin[i][1]<=candiTermalas:
+                    if listJin[i][1]==candiTermalas:
+                        if listJin[i][0]>jinTermalas:
+                            jinTermalas=listJin[i][0]
+                    else:
+                        candiTermalas=listJin[i][1]
                         jinTermalas=listJin[i][0]
-                else:
-                    candiTermalas=listJin[i][1]
-                    jinTermalas=listJin[i][0]
-            if listJin[i][1]>=candiTerajin:
-                if listJin[i][1]==candiTerajin:
-                    if listJin[i][0]<jinTerajin:
+                if listJin[i][1]>=candiTerajin:
+                    if listJin[i][1]==candiTerajin:
+                        if listJin[i][0]<jinTerajin:
+                            jinTerajin=listJin[i][0]
+                    else:
+                        candiTerajin=listJin[i][1]
                         jinTerajin=listJin[i][0]
-                else:
-                    candiTerajin=listJin[i][1]
-                    jinTerajin=listJin[i][0]
         print(f"Total Jin: {totalJin}")
         print(f"Total Jin Pengumpul: {totalJinPengumpul}")
         print(f"Total Jin Pembangun: {totalJinPembangun}")

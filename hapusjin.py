@@ -1,7 +1,7 @@
 import function
 import hancurkancandi
 
-def hapusjin (listUser,listCandi,user):
+def hapusjin (listUser,listCandi,user,listJin):
     if user=='bandung_bondowoso':
         jin = input("Masukkan username jin: ")
         for i in range(function.newLen(listUser)):
@@ -12,6 +12,9 @@ def hapusjin (listUser,listCandi,user):
                     print("Jin telah berhasil dihapus dari alam gaib.")
                     listUser[i][0]='0'
                     hancurkancandi.hancurkancandi(listCandi,'roro_jonggrang')
+                    for i in range(function.newLen(listJin)):
+                        if listJin[i][0]=='user':
+                            listJin[i][0]=='0'
                 else:
                     print("Jin batal dihapus.")
                 break

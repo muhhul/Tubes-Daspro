@@ -9,3 +9,8 @@ import ayamberkokok
 import laporancandi
 import laporanjin
 import login
+import bangun
+import kumpul
+import batch_bangun
+import batch_kumpul
+import summonjin
