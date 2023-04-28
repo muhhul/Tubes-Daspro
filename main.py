@@ -32,7 +32,7 @@ while(game):
     elif inputUser=='summonjin':
         importFull.summonjin.summonjin(user[1],listUser,listJin)
     elif inputUser=='hapusjin':
-        importFull.hapusjin.hapusjin(listUser,listCandi,user[1])
+        importFull.hapusjin.hapusjin(listUser,listCandi,user[1],listJin)
     elif inputUser=='ubahjin':
         importFull.ubahtipejin.UbahTipeJin(listUser,user[1])
     elif inputUser=='bangun':

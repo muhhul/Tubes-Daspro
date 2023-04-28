@@ -33,11 +33,11 @@ def validasi_jumlah_bahan(jumlah_bahan_sekarang, bahan_dibutuhkan):
     count = 0
     sisa_bahan = [0 for i in range(newLen(jumlah_bahan_sekarang))]
     for bahan in range (newLen(jumlah_bahan_sekarang)): 
-        if jumlah_bahan_sekarang[bahan] >= bahan_dibutuhkan[bahan] : 
+        if int(jumlah_bahan_sekarang[bahan]) >= int(bahan_dibutuhkan[bahan]) : 
             count += 1
             
         else: 
-            sisa_bahan[bahan] = bahan_dibutuhkan[bahan] - jumlah_bahan_sekarang[bahan]
+            sisa_bahan[bahan] = int(bahan_dibutuhkan[bahan]) - int(jumlah_bahan_sekarang[bahan])
             count = 0
     if count == 3: 
         return True
