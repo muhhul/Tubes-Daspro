@@ -50,7 +50,7 @@ def batchbangun(user, listUser,listCandi, listBahan,listJin):
         jumlah_jin_pembangun = 0
         nama_jin_pembangun = []
         for baris in range(1, newLen(listUser)): 
-            if user[baris][2] == 'pembangun':
+            if listUser[baris][2] == 'pembangun':
                 nama_jin_pembangun += [user[baris][0]] 
                 jumlah_jin_pembangun += 1
             else: 
