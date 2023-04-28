@@ -62,3 +62,5 @@ def summonjin(user,listUser,listJin):
         print("Membacakan mantra...")   
         
         print(f" Jin {input_username} berhasil dipanggil! ")
+    else:
+        print("Maaf anda tidak bisa mengakses fitur ini")
