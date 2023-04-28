@@ -7,9 +7,10 @@ import function
 
 def login(logged_user: List[str],listUser) -> List[str]:
     # 1. Check login, jika sudah login, gagal
-    if logged_user != '':
+    if logged_user[0] != '':
         print("Anda masih login")
     # 2. Belum login?, input username dan password
+        return logged_user
     else:
         input_username = input("Username: ")
         input_password = input("Password: ")
@@ -20,6 +21,7 @@ def login(logged_user: List[str],listUser) -> List[str]:
             # - Jika password salah, print password salah
                 if listUser[i][1] != input_password:
                     print("Password salah")
+                    return ['','']
                 else:
                     # - Jika benar, print Selamat datang
                     print("Selamat datang")
@@ -29,6 +31,7 @@ def login(logged_user: List[str],listUser) -> List[str]:
             elif i+1==function.newLen(listUser):
                 # Tangkap break dari for loop
                 print("Username tidak terdaftar")
+                return ['','']
 
 # if __name__ == "__main__":
 #     logged_user = ["", "", ""]
@@ -38,10 +41,11 @@ def login(logged_user: List[str],listUser) -> List[str]:
 
 def logout(logged_user: List[str]):
     # mengecek masih login atau blm
-    if logged_user == '':
+    if logged_user[0] == '':
         # jika blm print(blm login)
         print("logout gagal")
         print("anda belum login")
+        return logged_user
     # jika sudah print(logout)
     else:
         print("logout")
