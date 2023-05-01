@@ -5,7 +5,7 @@ import function
 import time
 import shutil
 
-path = "D:\Hul\ITB\Akademik\Daspro\Tubes\FileLoad" #program akan error
+path = r"C:\Users\Ardra Rafif S\Documents\ITB\TPB\Semester 2\Daspro\Tubes new\Tubes-Daspro\FileLoad" #program akan error
 # ganti alamat folder sesuai folder kamu
 # path = r"..............\FileLoad" isi titik titk sesuai tempat penyimpanan
 os.chdir(path)
@@ -81,7 +81,7 @@ def write(list,arrFile,x):
     file.close()
 
 def save():
-    os.chdir("D:\Hul\ITB\Akademik\Daspro\Tubes") #ganti sesuai dengan penyipanan directory kamu
+    os.chdir(r"C:\Users\Ardra Rafif S\Documents\ITB\TPB\Semester 2\Daspro\Tubes new\Tubes-Daspro") #ganti sesuai dengan penyipanan directory kamu
     arrFolder=os.listdir()
     cekFolder2 = function.mencari(arrFolder,'FileLoad')
     os.chdir(path)
@@ -119,7 +119,7 @@ def save():
         print("")
         print(f"Berhasil menyimpan data di folder FileLoad/{saveFolder}!")
     else:
-        os.chdir(r"D:\Hul\ITB\Akademik\Daspro\Tubes") #ganti sesuai dengan penyipanan directory kamu
+        os.chdir(r"C:\Users\Ardra Rafif S\Documents\ITB\TPB\Semester 2\Daspro\Tubes new\Tubes-Daspro") #ganti sesuai dengan penyipanan directory kamu
         os.makedirs('/FileLoad')
         os.chdir(path)
         shutil.copytree('TemplateLoad',f'{saveFolder}')

@@ -1,30 +1,5 @@
 import random 
-def newLen(arr): #pengganti fungsi len
-    temp = 0
-    for i in arr:
-        temp+=1
-    return temp
-def mencari(arr,nameFile): #untuk meecari apakah ada suatu nilai dalam sebuah list
-    cek = False
-    for i in range(newLen(arr)):
-        if nameFile==arr[i]:
-            cek=True
-    return cek
-def newSplit(arr,x): #pengganti fungsi split
-    arrTemp=[[0 for i in range(x)] for j in range(newLen(arr))]
-    arrTemp2=['0' for i in range(newLen(arr)-1)]
-    for i in range(newLen(arr)):
-        kata=''
-        count=0
-        for j in range(newLen(arr[i])):
-            if arr[i][j]==';'or j == newLen(arr[i])-1:
-                arrTemp[i][count]=kata
-                count+=1
-                kata=''
-            else:
-                kata=kata+arr[i][j]
-    return arrTemp
-
+from function import newLen
 #-------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------
@@ -47,7 +22,6 @@ def validasi_jumlah_bahan(jumlah_bahan_sekarang, bahan_dibutuhkan):
 
 
 
-### output dari bangun masih berupa bahan yang dibutuhkan untuk membuat candi, gua belom tau bentuk array dari user yang aktif kek gimana buat bisa ngasih ouput id dan nama pembuat
 
 def bangun (listBahan,listCandi,user,listJin):
     if user[1]=='pembangun':
@@ -56,7 +30,7 @@ def bangun (listBahan,listCandi,user,listJin):
         air  = random.randint(1,5)
         bahan_dibutuhkan =[pasir, batu, air]
 
-        print(f"Men-generate bahan bangunan ({pasir} pasir, {batu} batu, dan {air} air)")
+        #print(f"Men-generate bahan bangunan ({pasir} pasir, {batu} batu, dan {air} air)")
 
         jumlah_pasir_sekarang = 0
         jumlah_batu_sekarang = 0
@@ -95,7 +69,7 @@ def bangun (listBahan,listCandi,user,listJin):
             for i in range(newLen(listCandi)):
                 if listCandi[i][0]!='0':
                     count+=1
-            sisa_candi = 100 - count
+            sisa_candi = 100 - (count - 1)
             print(f"Sisa candi yang perlu dibangun: {sisa_candi}")
         else: 
             print("Bahan bangunan tidak mencukupi.")
