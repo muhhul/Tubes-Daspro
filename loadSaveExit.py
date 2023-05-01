@@ -5,7 +5,7 @@ import function
 import time
 import shutil
 
-path = "D:\Hul\ITB\Akademik\Daspro\Tubes\FileLoad" #program akan error
+path = r"C:\Users\Ardra Rafif S\Documents\ITB\TPB\Semester 2\Daspro\Tubez super new\Tubes-Daspro\FileLoad" #program akan error
 # ganti alamat folder sesuai folder kamu
 # path = r"..............\FileLoad" isi titik titk sesuai tempat penyimpanan
 os.chdir(path)
