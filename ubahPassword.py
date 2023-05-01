@@ -6,6 +6,7 @@ def ubahPass(user,listUser):
         for i in range(function.newLen(listUser)):
             if user==listUser[i][0]:
                 listUser[i][1]=newPass
+                print ("Password berhasil diubah.")
                 break
     else:
         print("Maaf anda belum login")
