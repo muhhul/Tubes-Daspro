@@ -26,7 +26,7 @@ def batchbangun(user, listUser,listCandi, listBahan,listJin):
         if newLen(listCandi) > 1: 
             list_id = cek_id(listCandi)             
         else: 
-            list_id = [i for i in range (1,101)]        
+            list_id = [i for i in range (1,101)]
         jumlah_jin_pembangun = 0
         nama_jin_pembangun = []
         for baris in range(1, newLen(listUser)): 
@@ -38,6 +38,11 @@ def batchbangun(user, listUser,listCandi, listBahan,listJin):
         if jumlah_jin_pembangun == 0: 
             print("Bangun gagal. Anda tidak punya jin pembangun. Silahkan summon terlebih dahulu.")
         else:
+            #mengecek jumlah candi yang sudah ada
+            if newLen(listCandi) + jumlah_jin_pembangun > 101 : 
+                jumlah_jin_pembangun = 100 - (newLen(listCandi) -1)
+            else: 
+                jumlah_jin_pembangun = jumlah_jin_pembangun
             #menghitung bahan yang dibutuhkan
             jumlah_pasir_dibutuhkan = 0
             jumlah_batu_dibutuhkan = 0
