@@ -1,5 +1,4 @@
 import random 
-# file = open("Tubes-Daspro/candi.csv", "r")
 
 def kumpul(user,listBahan):
     if user=='pengumpul': 
