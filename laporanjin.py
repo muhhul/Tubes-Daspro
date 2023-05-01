@@ -49,5 +49,3 @@ def laporanjin(listUser,listBahan,listJin,user,listCandi):
         print(f"Jumlah Batu: {listBahan[3][2]} unit")
     else: #user != "Bandung Bondowoso"
         print("Laporan jin hanya dapat diakses oleh akun Bandung Bondowoso.")
-    
-    #blmBeresss
