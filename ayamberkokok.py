@@ -12,14 +12,12 @@ def AyamBerkokok (listCandi,user):
         print (f"Jumlah Candi: {jumlah_candi}")
         if jumlah_candi >= 100:
             print("Yah, Bandung Bondowoso memenangkan permainan!")
-            #exitnya bingung gmn hehe
         else: 
             print ("Selamat, Roro Jonggrang memenangkan permainan!")
             time.sleep(1.0)
             print ("AAARRRRGGHHHHHH *Bandung Bondowoso angry noise*")
             time.sleep(1.0)
             print ("Roro Jonggrang dikutuk menjadi candi.")
-            #exitnya bingung gmn hehe
             sys.exit()
     else:
         print("Maaf anda tidak bisa mengakses fitur ini")
