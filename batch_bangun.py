@@ -20,14 +20,13 @@ def validasi_jumlah_bahan(jumlah_bahan_sekarang, bahan_dibutuhkan):
     else :
         return sisa_bahan
 
-def batchbangun(user, listUser, listBahan,listJin,listCandi):
+def batchbangun(user, listUser,listCandi, listBahan,listJin):
     #Menghitung jumlah jin pembangun
     if user=='bandung_bondowoso':
         if newLen(listCandi) > 1: 
             list_id = cek_id(listCandi)             
         else: 
-            list_id = [i for i in range (1,101)]  
-
+            list_id = [i for i in range (1,101)]        
         jumlah_jin_pembangun = 0
         nama_jin_pembangun = []
         for baris in range(1, newLen(listUser)): 
@@ -51,9 +50,9 @@ def batchbangun(user, listUser, listBahan,listJin,listCandi):
                 pasir_dibutuhkan = random.randint(1,5)
                 batu_dibutuhkan = random.randint(1,5)
                 air_dibutuhkan = random.randint(1,5)
-
-                #mengecek id terakhir pada data candi
                 id_candi = 0
+
+                #mengecek id yang tersedia
                 for j in range (1, 101):
                     if list_id[j-1] == j:
                         id_candi = j
