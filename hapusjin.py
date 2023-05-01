@@ -12,11 +12,11 @@ def hapusjin (listUser,listCandi,user,listJin):
                     print("Jin telah berhasil dihapus dari alam gaib.")
                     listUser[i][0]='0'
                     for i in range(function.newLen(listCandi)):
-                        if listCandi[i][1]=='jin':
-                            listCandi[i][0]=='0'
+                        if listCandi[i][1]==jin:
+                            listCandi[i][0]='0'
                     for i in range(function.newLen(listJin)):
-                        if listJin[i][0]=='user':
-                            listJin[i][0]=='0'
+                        if listJin[i][0]==jin:
+                            listJin[i][0]='0'
                 else:
                     print("Jin batal dihapus.")
                 break

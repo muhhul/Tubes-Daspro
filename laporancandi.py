@@ -18,9 +18,9 @@ def laporancandi(listCandi,user):
         total_batu = 0
         total_air = 0
         for i in range (1, function.newLen(listCandi)):
-            total_pasir += listCandi[i][2]
-            total_batu += listCandi[i][3]
-            total_air += listCandi[i][4]
+            total_pasir += int(listCandi[i][2])
+            total_batu += int(listCandi[i][3])
+            total_air += int(listCandi[i][4])
         print (f"Total pasir yang digunakan: {total_pasir}")
         time.sleep(0.5)
         print (f"Total batu yang digunakan: {total_batu}")
@@ -30,15 +30,15 @@ def laporancandi(listCandi,user):
 
         #candi termahal dan termurah
         if total_candi > 0:
-            harga_termahal = (10000*listCandi[1][2]) + (15000*listCandi[1][3]) + (7500*listCandi[1][4])
-            id_termahal = listCandi [1][0]
-            harga_termurah = (10000*listCandi[1][2]) + (15000*listCandi[1][3]) + (7500*listCandi[1][4])
-            id_termurah = listCandi [1][0]
+            harga_termahal = 0
+            id_termahal = '-'
+            harga_termurah = 999999999999
+            id_termurah = '-'
             for i in range (1, function.newLen(listCandi)):
                 if listCandi [i][0] != '0':
-                    harga_candi = (10000*listCandi[i][2]) + (15000*listCandi[i][3]) + (7500*listCandi[i][4])
+                    harga_candi = (10000*int(listCandi[i][2])) + (15000*int(listCandi[i][3])) + (7500*int(listCandi[i][4]))
                     id_candi = listCandi [i][0]
-                    if harga_candi > harga_termahal:
+                    if int(harga_candi) > int(harga_termahal):
                         harga_termahal = harga_candi
                         id_termahal = id_candi
                     else:
@@ -46,7 +46,7 @@ def laporancandi(listCandi,user):
                         id_termahal = id_termahal
                     if harga_candi < harga_termurah:
                         harga_termurah = harga_candi
-                        id_termahal = id_candi
+                        id_termurah = id_candi
                     else :
                         harga_termurah = harga_termurah
                         id_termurah = id_termurah

@@ -10,9 +10,9 @@ def laporanjin(listUser,listBahan,listJin,user):
         candiTerajin=0
         candiTermalas=9999
         for i in range(function.newLen(listUser)):
-            if listUser[i][2] == "pengumpul":
+            if listUser[i][2] == "pengumpul" and listUser[i][0] != '0':
                 totalJinPengumpul += 1  
-            elif listUser[i][2] == "pembangun":
+            elif listUser[i][2] == "pembangun" and listUser[i][0] != '0':
                 totalJinPembangun += 1
             totalJin = totalJinPengumpul + totalJinPembangun
         for i in range(1,function.newLen(listJin)):

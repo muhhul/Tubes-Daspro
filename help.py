@@ -1,10 +1,10 @@
 def help (user):
-    if user=='' : #belum login
+    if user[1]=='' : #belum login
         print("================ HELP ================", end="\n")
         print("1. login \n   Untuk masuk menggunakan akun")
         print ("2. exit \n   Untuk keluar dari program dan kembali ke terminal")
     else:
-        if user == 'bandung bondowoso': #user merupakan bandung bondowoso
+        if user[1] == 'bandung_bondowoso': #user merupakan bandung bondowoso
             print("================ HELP ================", end="\n")
             print ("1. logout \n   Untuk keluar dari akun yang digunakan sekarang")
             print ("2. summonjin \n   Untuk memanggil jin")
@@ -16,20 +16,20 @@ def help (user):
             print ("8. laporancandi \n   Untuk mengambil laporan candi")
             print ("9. save \n   Untuk menyimpan data")
             print ("10. exit \n   Untuk keluar dari program dan kembali ke terminal")
-        elif user == 'roro jonggrang': # user merupakan roro jonggrang
+        elif user[1] == 'roro_jonggrang': # user merupakan roro jonggrang
             print("================ HELP ================", end="\n")
             print ("1. logout \n   Untuk keluar dari akun yang digunakan sekarang")
             print ("2. hancurkancandi \n   Untuk menghancurkan candi yang telah dibangun oleh Bandung Bondowoso")
             print ("3. ayamberkokok \n   Untuk menyelesaikan permainan dengan memalsukan pagi hari")
             print ("4. save \n   Untuk menyimpan data")
             print ("5. exit \n   Untuk keluar dari program dan kembali ke terminal")
-        elif user == 'jin pengumpul': # user merupakan jin pengumpul
+        elif user[1]== 'pengumpul': # user merupakan jin pengumpul
             print("================ HELP ================", end="\n")
             print ("1. logout \n   Untuk keluar dari akun yang digunakan sekarang")
             print ("2. kumpul \n   Untuk mengumpulkan resource candi")
             print ("3. save \n   Untuk menyimpan data")
             print ("4. exit \n   Untuk keluar dari program dan kembali ke terminal")
-        elif user == 'jin pembangun': #user merupakan jin pembangun
+        elif user[1]== 'pembangun': #user merupakan jin pembangun
             print("================ HELP ================", end="\n")
             print ("1. logout \n   Untuk keluar dari akun yang digunakan sekarang")
             print ("2. bangun \n   Untuk membangun candi")

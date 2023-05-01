@@ -51,7 +51,7 @@ def batchbangun(user, listUser,listCandi, listBahan,listJin):
         nama_jin_pembangun = []
         for baris in range(1, newLen(listUser)): 
             if listUser[baris][2] == 'pembangun':
-                nama_jin_pembangun += [user[baris][0]] 
+                nama_jin_pembangun += [listUser[baris][0]] 
                 jumlah_jin_pembangun += 1
             else: 
                 continue
@@ -94,7 +94,7 @@ def batchbangun(user, listUser,listCandi, listBahan,listJin):
             
             jumlah_bahan_dibutuhkan = [jumlah_pasir_dibutuhkan, jumlah_batu_dibutuhkan, jumlah_air_dibutuhkan]
 
-            print(f"Mengerahkan {jumlah_jin_pembangun} jin untuk membangun candi dengan total bahan {jumlah_pasir_dibutuhkan} pasir, {jumlah_batu_dibutuhkan}, dan {jumlah_air_dibutuhkan} air.")
+            print(f"Mengerahkan {jumlah_jin_pembangun} jin untuk membangun candi dengan total bahan {jumlah_pasir_dibutuhkan} pasir, {jumlah_batu_dibutuhkan} batu, dan {jumlah_air_dibutuhkan} air.")
 
             # Mengecek ketersediaan bahan yang sudah dikumpulkan
             jumlah_pasir_sekarang = 0
@@ -109,13 +109,16 @@ def batchbangun(user, listUser,listCandi, listBahan,listJin):
                     jumlah_air_sekarang = listBahan[baris][2]
             
             jumlah_bahan = [jumlah_pasir_sekarang, jumlah_batu_sekarang, jumlah_air_sekarang]
-            print(jumlah_bahan)
 
             if validasi_jumlah_bahan(jumlah_bahan, jumlah_bahan_dibutuhkan) == True: 
                 print(f"Jin berhasil membangun total {newLen(array_data_candi)} candi")
-                listCandi.append(array_data_candi)
-                for i in range(newLen(listJin)):
-                    listJin[i][1]=str(int(listJin[i][1])+1)
+                for i in range(newLen(array_data_candi)):
+                    listCandi.append(array_data_candi[i])
+                for i in range(1,newLen(listJin)):
+                    listJin[i][1]=(int(listJin[i][1]))+1
+                listBahan[1][2] = int(jumlah_pasir_sekarang) - int(jumlah_pasir_dibutuhkan)
+                listBahan[2][2] = int(jumlah_batu_sekarang) - int(jumlah_batu_dibutuhkan)
+                listBahan[3][2] = int(jumlah_air_sekarang) - int(jumlah_air_dibutuhkan)
             else:
                 sisa_bahan = validasi_jumlah_bahan (jumlah_bahan, jumlah_bahan_dibutuhkan)
                 print(f"Bangun gagal. Kurang {sisa_bahan[0]} pasir, {sisa_bahan[1]} batu, dan {sisa_bahan[2]} air.")

@@ -73,10 +73,10 @@ def write(list,arrFile,x):
         for j in range(x):
             if list[i][0]!='0':
                 if j == x-1:
-                    file.write(list[i][j])
+                    file.write(str(list[i][j]))
                     file.write("\n")
                 else:
-                    file.write(list[i][j])
+                    file.write(str(list[i][j]))
                     file.write(";")
     file.close()
 
@@ -134,10 +134,10 @@ def save():
         print("Saving...")
 
 def exit():
-    inputUser = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
-    while (inputUser != 'n' and inputUser != 'y'):
-        inputUser = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (y/n)")
-    if inputUser == 'y':
+    inputUser = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (Y/N)")
+    while (inputUser != 'Y' and inputUser != 'N'):
+        inputUser = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (Y/N)")
+    if inputUser == 'Y':
         save()
         sys.exit()
     elif inputUser == 'N':

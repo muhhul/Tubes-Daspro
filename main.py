@@ -20,7 +20,7 @@ while(game):
     #os.system('cls')
     inputUser=input(">>> ")
     if inputUser=='help':
-        importFull.help.help(user[1])
+        importFull.help.help(user)
     elif inputUser=='login':
         user=importFull.login.login(user,listUser)
     elif inputUser=='logout':

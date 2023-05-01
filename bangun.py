@@ -34,11 +34,11 @@ def validasi_jumlah_bahan(jumlah_bahan_sekarang, bahan_dibutuhkan):
     count = 0
     sisa_bahan = [0 for i in range(newLen(jumlah_bahan_sekarang))]
     for bahan in range (newLen(jumlah_bahan_sekarang)): 
-        if jumlah_bahan_sekarang[bahan] >= bahan_dibutuhkan[bahan] : 
+        if int(jumlah_bahan_sekarang[bahan]) >= int(bahan_dibutuhkan[bahan]) : 
             count += 1
             
         else: 
-            sisa_bahan[bahan] = bahan_dibutuhkan[bahan] - jumlah_bahan_sekarang[bahan]
+            sisa_bahan[bahan] = int(bahan_dibutuhkan[bahan]) - int(jumlah_bahan_sekarang[bahan])
             count = 0
     if count == 3: 
         return True
@@ -70,7 +70,6 @@ def bangun (listBahan,listCandi,user,listJin):
                 jumlah_air_sekarang = listBahan[baris][2]
         
         jumlah_bahan = [jumlah_pasir_sekarang, jumlah_batu_sekarang, jumlah_air_sekarang]
-        print(jumlah_bahan)
         
         if validasi_jumlah_bahan(jumlah_bahan, bahan_dibutuhkan) == True:
             for i in range(newLen(listJin)):
@@ -85,8 +84,11 @@ def bangun (listBahan,listCandi,user,listJin):
                     listCandi[i][4]=bahan_dibutuhkan[2]
                     break
                 elif i+1==newLen(listCandi):
-                    temp=[f'{i+2}',user[0],bahan_dibutuhkan[0],bahan_dibutuhkan[1],bahan_dibutuhkan[2]]
+                    temp=[f'{i}',user[0],bahan_dibutuhkan[0],bahan_dibutuhkan[1],bahan_dibutuhkan[2]]
                     listCandi.append(temp)
+            listBahan[1][2] = int(jumlah_pasir_sekarang) - int(bahan_dibutuhkan[0])
+            listBahan[2][2] = int(jumlah_batu_sekarang) - int(bahan_dibutuhkan[1])
+            listBahan[3][2] = int(jumlah_air_sekarang) - int(bahan_dibutuhkan[2])
 
             print("Candi berhasil dibangun")
             count=0
