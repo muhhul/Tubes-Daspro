@@ -16,7 +16,7 @@ def AyamBerkokok (listCandi,user):
         else: 
             print ("Selamat, Roro Jonggrang memenangkan permainan!")
             time.sleep(1.0)
-            print ("*Bandung Bondowoso angry noise*")
+            print ("AAARRRRGGHHHHHH *Bandung Bondowoso angry noise*")
             time.sleep(1.0)
             print ("Roro Jonggrang dikutuk menjadi candi.")
             #exitnya bingung gmn hehe

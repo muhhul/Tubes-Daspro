@@ -81,7 +81,7 @@ def write(list,arrFile,x):
     file.close()
 
 def save():
-    os.chdir(r"C:\Users\Ardra Rafif S\Documents\ITB\TPB\Semester 2\Daspro\Tubes new\Tubes-Daspro") #ganti sesuai dengan penyipanan directory kamu
+    os.chdir(r"D:\Hul\ITB\Akademik\Daspro\Tubes") #ganti sesuai dengan penyipanan directory kamu
     arrFolder=os.listdir()
     cekFolder2 = function.mencari(arrFolder,'FileLoad')
     os.chdir(path)
@@ -119,7 +119,7 @@ def save():
         print("")
         print(f"Berhasil menyimpan data di folder FileLoad/{saveFolder}!")
     else:
-        os.chdir(r"C:\Users\Ardra Rafif S\Documents\ITB\TPB\Semester 2\Daspro\Tubes new\Tubes-Daspro") #ganti sesuai dengan penyipanan directory kamu
+        os.chdir(r"D:\Hul\ITB\Akademik\Daspro\Tubes") #ganti sesuai dengan penyipanan directory kamu
         os.makedirs('/FileLoad')
         os.chdir(path)
         shutil.copytree('TemplateLoad',f'{saveFolder}')
