@@ -6,14 +6,16 @@ listUser = importFull.loadSaveExit.user()
 listCandi = importFull.loadSaveExit.candi()
 listBahan = importFull.loadSaveExit.bahan()
 listJin = [['jin','jumlahCandi']]
-
 user=['','']
-#importFull.help.help(user)
-#importFull.hapusjin.hapusjin(listUser)
-#importFull.ubahPassword.ubahPass("Bondowoso","akuMenang",listUser)
-#importFull.ubahtipejin.UbahTipeJin(listUser)
-#importFull.loadSaveExit.save()
 
+for i in range(3,importFull.function.newLen(listUser)):
+    if listUser[i][2]=='pembangun':
+        temp=[listUser[i][0],0]
+        listJin.append(temp)
+for i in range(1,importFull.function.newLen(listCandi)):
+    for j in range(1,importFull.function.newLen(listJin)):
+        if listCandi[i][1]==listJin[j][0]:
+            listJin[j][1]=(int(listJin[j][1]+1))
 
 game=True
 while(game):
@@ -44,7 +46,7 @@ while(game):
     elif inputUser=='batchbangun':
         importFull.batch_bangun.batchbangun(user[1],listUser,listCandi,listBahan,listJin)
     elif inputUser=='laporanjin':
-        importFull.laporanjin.laporanjin(listUser,listBahan,listJin,user[1])
+        importFull.laporanjin.laporanjin(listUser,listBahan,listJin,user[1],listCandi)
     elif inputUser=='laporancandi':
         importFull.laporancandi.laporancandi(listCandi,user[1])
     elif inputUser=='hancurkancandi':

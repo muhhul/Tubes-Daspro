@@ -1,6 +1,6 @@
 import function
 
-def laporanjin(listUser,listBahan,listJin,user):
+def laporanjin(listUser,listBahan,listJin,user,listCandi):
     if user == 'bandung_bondowoso':
         totalJin = 0
         totalJinPengumpul = 0
@@ -15,17 +15,25 @@ def laporanjin(listUser,listBahan,listJin,user):
             elif listUser[i][2] == "pembangun" and listUser[i][0] != '0':
                 totalJinPembangun += 1
             totalJin = totalJinPengumpul + totalJinPembangun
+        for i in range(3,function.newLen(listUser)):
+            if listUser[i][2]=='pembangun':
+                temp=[listUser[i][0],0]
+                listJin.append(temp)
+        for i in range(1,function.newLen(listCandi)):
+            for j in range(1,function.newLen(listJin)):
+                if listCandi[i][1]==listJin[j][0]:
+                    listJin[j][1]=(int(listJin[j][1]+1))
         for i in range(1,function.newLen(listJin)):
             if listJin[i][0]!='0':
-                if listJin[i][1]<=candiTermalas:
-                    if listJin[i][1]==candiTermalas:
+                if int(listJin[i][1])<=int(candiTermalas):
+                    if int(listJin[i][1])==int(candiTermalas):
                         if listJin[i][0]>jinTermalas:
                             jinTermalas=listJin[i][0]
                     else:
                         candiTermalas=listJin[i][1]
                         jinTermalas=listJin[i][0]
-                if listJin[i][1]>=candiTerajin:
-                    if listJin[i][1]==candiTerajin:
+                if int(listJin[i][1])>=int(candiTerajin):
+                    if int(listJin[i][1])==int(candiTerajin):
                         if listJin[i][0]<jinTerajin:
                             jinTerajin=listJin[i][0]
                     else:

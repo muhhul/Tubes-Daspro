@@ -5,13 +5,13 @@ import function
 import time
 import shutil
 
+#def load():
 path = "D:\Hul\ITB\Akademik\Daspro\Tubes\FileLoad" #program akan error
 # ganti alamat folder sesuai folder kamu
 # path = r"..............\FileLoad" isi titik titk sesuai tempat penyimpanan
 os.chdir(path)
 arrFolder=os.listdir()
 
-#def load():
 parser = argparse.ArgumentParser(description='Masukkan Nama Folder')
 parser.add_argument('namaFolder', type=str, nargs = '?', help='Nama Folder', default='')
 args = parser.parse_args()
@@ -25,6 +25,7 @@ if cekLoad==True:
     print("Memuat data...")
     time.sleep(1.5)
     os.system('cls')
+    print("Selamat datang di program “Manajerial Candi”")
 elif args.namaFolder=='':
     print("")
     print("Loading...")
@@ -114,7 +115,7 @@ def save():
         print("Saving...")
         time.sleep(1.5)
         print("")
-        print(f"Memuat folder FileLoad/{saveFolder}...")
+        print(f"Membuat folder FileLoad/{saveFolder}...")
         time.sleep(1.5)
         print("")
         print(f"Berhasil menyimpan data di folder FileLoad/{saveFolder}!")
@@ -132,6 +133,15 @@ def save():
 
         print("")
         print("Saving...")
+        print("")
+        time.sleep(1.5)
+        print(f"Membuat folder FileLoad...")
+        time.sleep(1.5)
+        print("")
+        print(f"Membuat folder FileLoad/{saveFolder}...")
+        time.sleep(1.5)
+        print("")
+        print(f"Berhasil menyimpan data di folder FileLoad/{saveFolder}!")
 
 def exit():
     inputUser = input("Apakah Anda mau melakukan penyimpanan file yang sudah diubah? (Y/N)")

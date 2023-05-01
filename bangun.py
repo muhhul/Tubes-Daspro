@@ -92,7 +92,7 @@ def bangun (listBahan,listCandi,user,listJin):
 
             print("Candi berhasil dibangun")
             count=0
-            for i in range(newLen(listCandi)):
+            for i in range(1,newLen(listCandi)):
                 if listCandi[i][0]!='0':
                     count+=1
             sisa_candi = 100 - count
