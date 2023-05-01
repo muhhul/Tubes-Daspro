@@ -1,5 +1,5 @@
 import random 
-from function import newLen
+from function import newLen, newAppend,cek_id
 #-------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------
@@ -25,6 +25,11 @@ def validasi_jumlah_bahan(jumlah_bahan_sekarang, bahan_dibutuhkan):
 
 def bangun (listBahan,listCandi,user,listJin):
     if user[1]=='pembangun':
+        if newLen(listCandi) > 1: 
+            list_id = cek_id(listCandi)             
+        else: 
+            list_id = [i for i in range (1,101)]
+        
         pasir = random.randint(1,5)
         batu = random.randint(1,5)
         air  = random.randint(1,5)
@@ -50,6 +55,7 @@ def bangun (listBahan,listCandi,user,listJin):
                 if user[0]==listJin[i][0]:
                     listJin[i][1]=str(int(listJin[i][1])+1)
             for i in range(newLen(listCandi)):
+                id_candi = 0
                 if listCandi[i][0]=='0':
                     listCandi[i][0]=f'{i+1}'
                     listCandi[i][1]=user[0]
@@ -58,8 +64,17 @@ def bangun (listBahan,listCandi,user,listJin):
                     listCandi[i][4]=bahan_dibutuhkan[2]
                     break
                 elif i+1==newLen(listCandi):
-                    temp=[f'{i}',user[0],bahan_dibutuhkan[0],bahan_dibutuhkan[1],bahan_dibutuhkan[2]]
-                    listCandi.append(temp)
+                    for j in range (1, 101):
+                        if list_id[j-1] == j:
+                            id_candi = j
+                            list_id[j-1] = ''
+                            break
+                        else: 
+                            continue
+                    temp=[f'{id_candi}',user[0],bahan_dibutuhkan[0],bahan_dibutuhkan[1],bahan_dibutuhkan[2]]
+                    listCandi = newAppend(listCandi, temp)
+                    # listCandi.append(temp)
+                    # print(listCandi)
             listBahan[1][2] = int(jumlah_pasir_sekarang) - int(bahan_dibutuhkan[0])
             listBahan[2][2] = int(jumlah_batu_sekarang) - int(bahan_dibutuhkan[1])
             listBahan[3][2] = int(jumlah_air_sekarang) - int(bahan_dibutuhkan[2])
@@ -69,13 +84,14 @@ def bangun (listBahan,listCandi,user,listJin):
             for i in range(1,newLen(listCandi)):
                 if listCandi[i][0]!='0':
                     count+=1
-            sisa_candi = 100 - (count - 1)
+            sisa_candi = 100 - (count)
             print(f"Sisa candi yang perlu dibangun: {sisa_candi}")
         else: 
             print("Bahan bangunan tidak mencukupi.")
             print("Candi tidak bisa dibangun!")
     else:
         print("Maaf anda tidak bisa mengakses fitur ini")
+    return listCandi
 
 
 #----------------CONTOH INPUT------------------------------#
@@ -84,11 +100,11 @@ def bangun (listBahan,listCandi,user,listJin):
 #                   ["batu", "bleh2", 12], 
 #                   ["air", "bleh2", 12]]
 # candi = [["id", "pembuat", "pasir", "batu", "air"], 
-#          ["id", "pembuat", "pasir", "batu", "air"], 
-#          ["id", "pembuat", "pasir", "batu", "air"], 
-#          ["id", "pembuat", "pasir", "batu", "air"]]     
+#          ["1", "pembuat", "pasir", "batu", "air"], 
+#          ["3", "pembuat", "pasir", "batu", "air"], 
+#          ["5", "pembuat", "pasir", "batu", "air"]]     
 
-#bangun(bahan_bangunan, candi)
+# bangun(bahan_bangunan, candi)
 
 
 

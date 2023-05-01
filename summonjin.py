@@ -54,9 +54,9 @@ def summonjin(user,listUser,listJin):
             print("Password panjangnya harus 5-25 karakter!")
                 
         temp=[input_username,input_password,jin]
-        listUser.append(temp)
+        listUser=function.newAppend(listUser,temp)
         temp=[input_username,0]
-        listJin.append(temp)
+        listJin=function.newAppend(listJin,temp)
         print("Mengumpulkan sesajen..")  
         print("Menyerahkan sesajen...") 
         print("Membacakan mantra...")   
@@ -64,4 +64,6 @@ def summonjin(user,listUser,listJin):
         print(f" Jin {input_username} berhasil dipanggil! ")
     else:
         print("Maaf anda tidak bisa mengakses fitur ini")
+    temp=[listUser,listJin]
+    return temp
     
