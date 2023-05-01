@@ -1,5 +1,5 @@
 import random
-from function import newLen
+from function import newLen, newAppend, cek_id
 
 #-------------------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------------------
@@ -23,6 +23,10 @@ def validasi_jumlah_bahan(jumlah_bahan_sekarang, bahan_dibutuhkan):
 def batchbangun(user, listUser,listCandi, listBahan,listJin):
     #Menghitung jumlah jin pembangun
     if user=='bandung_bondowoso':
+        if newLen(listCandi) > 1: 
+            list_id = cek_id(listCandi)             
+        else: 
+            list_id = [i for i in range (1,101)]        
         jumlah_jin_pembangun = 0
         nama_jin_pembangun = []
         for baris in range(1, newLen(listUser)): 
@@ -46,16 +50,19 @@ def batchbangun(user, listUser,listCandi, listBahan,listJin):
                 pasir_dibutuhkan = random.randint(1,5)
                 batu_dibutuhkan = random.randint(1,5)
                 air_dibutuhkan = random.randint(1,5)
+                id_candi = 0
 
-                #mengecek id terakhir pada data candi
-                id_candi_terakhir = -1
-                if newLen(listCandi) == 1 :
-                    id_candi_terakhir = -1
-                else: 
-                    id_candi_terakhir = newLen(listCandi)- 2 
+                #mengecek id yang tersedia
+                for j in range (1, 101):
+                    if list_id[j-1] == j:
+                        id_candi = j
+                        list_id[j-1] = ''
+                        break
+                    else: 
+                        continue
                                 
                 #menginput data candi
-                array_data_candi[i][0] = i + 1 + id_candi_terakhir
+                array_data_candi[i][0] = id_candi
                 array_data_candi[i][1] = nama_jin_pembangun[i]
                 array_data_candi[i][2] = pasir_dibutuhkan
                 array_data_candi[i][3] = batu_dibutuhkan
@@ -89,7 +96,7 @@ def batchbangun(user, listUser,listCandi, listBahan,listJin):
             if validasi_jumlah_bahan(jumlah_bahan, jumlah_bahan_dibutuhkan) == True: 
                 print(f"Jin berhasil membangun total {newLen(array_data_candi)} candi")
                 for i in range(newLen(array_data_candi)):
-                    listCandi.append(array_data_candi[i])
+                    listCandi = newAppend(listCandi,array_data_candi[i])
                 for i in range(1,newLen(listJin)):
                     listJin[i][1]=(int(listJin[i][1]))+1
                 listBahan[1][2] = int(jumlah_pasir_sekarang) - int(jumlah_pasir_dibutuhkan)
